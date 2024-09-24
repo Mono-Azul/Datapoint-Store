@@ -1,0 +1,22 @@
+{:paths ["src" "logging" "configuration"]
+ :deps {ring/ring-jetty-adapter {:mvn/version "1.12.2"}
+        ring/ring {:mvn/version "1.12.2"}
+        ring/ring-defaults {:mvn/version "0.5.0"}
+        compojure/compojure {:mvn/version "1.7.1"}
+        org.duckdb/duckdb_jdbc {:mvn/version "1.0.0"}
+        org.clojure/tools.logging {:mvn/version "1.3.0"}
+        org.clojure/core.async {:mvn/version "1.6.681"}
+        ch.qos.logback/logback-classic {:mvn/version "1.5.7"}
+        com.github.seancorfield/next.jdbc {:mvn/version "1.3.939"}
+}
+ :aliases
+  {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.5"}}
+           :ns-default build}
+   :reveal {:extra-deps {vlaaad/reveal {:mvn/version "1.3.282"}
+                         lambdaisland/deep-diff2 {:mvn/version "2.11.216"}
+                         cider/cider-nrepl {:mvn/version "0.50.2"}}
+            :main-opts ["-m" "nrepl.cmdline" "--middleware" "[vlaaad.reveal.nrepl/middleware]"]}
+   :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
+             :main-opts ["-m" "antq.core"]}
+   :jopts {:jvm-opts ["--add-opens=java.base/java.nio=ALL-UNNAMED"]} ; "-Xmx2048m"]}
+  }}

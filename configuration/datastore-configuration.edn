@@ -1,0 +1,3 @@
+{:database-file-path "/database/DatapointStore"
+ :buffer-size 10000
+ }
